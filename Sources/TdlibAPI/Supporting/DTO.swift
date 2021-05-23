@@ -37,6 +37,12 @@ public final class DTO<T: Codable>: Codable {
     }
 }
 
+public protocol TdQuery {
+
+    func make(with extra: String?) throws -> Data
+
+}
+
 extension DTO: TdQuery {
 
     public func make(with extra: String? = nil) throws -> Data {
